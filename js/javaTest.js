@@ -330,6 +330,7 @@ async function searchByName(term) {
     load.classList.remove("d-none");
     let response=await fetch(`https://www.themealdb.com/api/json/v1/1/search.php?s=${term}`)
     response=await response.json() 
+    load.classList.add("d-none");
     response.meals ? displayMainMeals(response.meals) : displayMainMeals([]) 
     load.classList.add("d-none"); 
     console.log(response.meals)
@@ -342,6 +343,7 @@ async function searchByLetter(term) {
     load.classList.remove("d-none");
     let response=await fetch(`https://www.themealdb.com/api/json/v1/1/search.php?f=${term}`)
     response=await response.json()
+    load.classList.add("d-none");
     response.meals ? displayMainMeals(response.meals) : displayMainMeals([])
     load.classList.add("d-none");
     console.log(response)
